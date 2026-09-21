@@ -1,0 +1,38 @@
+# 凭据与本地环境
+env.local.sh
+scripts/env.local.sh
+*.pem
+*.key
+*.token
+
+# 大体积与非源码产物
+*.tar.gz
+*.tgz
+*.zip
+*.mp4
+*.avi
+*.mov
+*.bag
+
+# 日志与运行产物
+*.log
+*.pyc
+__pycache__/
+build/
+devel/
+install/
+log/
+logs/
+bobac_match_logs/
+
+# 现场证据素材
+evidence/
+*.jpg
+*.jpeg
+*.png
+
+# Office 临时文件
+~$*
+*.tmp
+.DS_Store
+Thumbs.db

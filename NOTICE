@@ -1,0 +1,53 @@
+# NOTICE — 第三方与官方来源标注
+
+本仓库用于 ROBOTAC AIROBOTIC 总决赛参赛作品的源码公开。评审细则 7.2 要求「使用开源库和工具须在文档中明确标注引用来源」，故将非队伍自研内容集中说明如下。
+
+## 1. 官方/平台示例脚本
+
+目录：`third_party/official_demo/`
+
+| 文件 | 来源 |
+|---|---|
+| `official_sim_slam_toolbox.sh` | 官方 SLAM 示例入口 |
+| `official_sim_nav2_navigation.sh` | 官方 Nav2 导航示例入口 |
+| `official_sim_localization_demo.sh` | 官方定位示例入口 |
+| `official_sim_perception_demo.sh` | 官方感知示例入口 |
+| `official_sim_planning_demo.sh` | 官方规划示例入口 |
+| `official_sim_pose_tf_demo.sh` | 官方位姿/TF 示例入口 |
+| `official_sim_observation_pose.sh` | 官方观察位姿示例入口 |
+| `official_sim_gripper_demo.sh` | 官方夹爪示例入口 |
+
+上述脚本为官方/平台提供示例在赛场环境中的快照，**版权归原作者所有**，不以本仓库许可分发，仅用于复现现场调用方式。
+
+## 2. 官方 ROS 软件包与工具
+
+真机链路依赖以下官方或第三方 ROS 组件（本仓库不含其源码）：
+
+- `bobac3_navigation` / `bobac3_slam` / `map_manager` / `cspc_lidar` / `bobac3_description`（Bobac 平台官方包）
+- `berxel_camera`（Berxel 相机官方驱动）
+- `rm_driver`（机械臂官方驱动）
+- `move_base` / `amcl` / `map_server` / `cartographer` / `tf` / `rviz`（ROS 社区开源组件）
+- cuRobo（仿真侧运动规划，第三方开源项目，本仓库不含其源码）
+
+## 3. 官方文档摘录
+
+`docs/Bobac3_官方手册入口摘录_20260826.md` 摘录自 **Bobac3 使用说明书**，仅保留与现场 30 分钟强相关的命令入口与夹爪寄存器表，**版权归厂商所有**，不构成对原手册的再分发许可。
+
+`configs/bobac_eco65_right_tcp.yml`、`real_bobac_params.yaml` 中的部分参数键名沿用了官方示例配置结构。
+
+## 4. 赛事资料
+
+`ROBOTAC AIROBOTIC 总决赛` 的场地说明、评审细则、秩序册等赛事官方文件**未包含在本仓库中**，请向赛事主办方获取。
+
+## 5. 队伍自研内容
+
+以下为队伍自研，可依 `LICENSE` 授权：
+
+- `scripts/`（含 `legacy_20260827/`、`sim_tools/` 中除官方示例外的脚本，如 `keyboard_*`、`print_*`、`send_goal`、`run_grasp`、`nav_align_perception_sequence`、`preflight_check`、`curobo_smoke_check`、`start_*`、`place_fixed`、`save_logs`、`build_workspace` 等）
+- `configs/demo_params.yaml`、`configs/map.rviz`
+- `maps/site_0827_new.*`（现场自建地图）
+- `docs/` 中的开发文档与执行方案
+
+## 6. 分类校验提醒
+
+`third_party/` 与自研脚本的划分依据是文件名约定（`official_sim_*`）与现场记录，建议队伍在正式发布前再核对一次，确认无误后再上传。
